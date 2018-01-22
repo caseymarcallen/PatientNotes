@@ -1,5 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
 
 namespace Todo
 {
@@ -34,7 +35,7 @@ namespace Todo
 
 		async void OnRateApplication(object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new RateAppPage());
+			//await Navigation.PushAsync(new RateAppPage());
 		}
 	}
 }
