@@ -37,9 +37,6 @@
     <EmbeddedResource Include="Views\TodoListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\RateAppPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -70,9 +67,6 @@
     <Compile Include="Services\IBingSpellCheckService.cs" />
     <Compile Include="Services\BingSpellCheckService.cs" />
     <Compile Include="Models\SpellCheckResult.cs" />
-    <Compile Include="Views\RateAppPage.xaml.cs">
-      <DependentUpon>RateAppPage.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
