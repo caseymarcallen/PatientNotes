@@ -148,7 +148,9 @@
       <InProject>false</InProject>
     </ImageAsset>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BundleResource Include="Resources\microphone_off.png" />
+  </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
   </ItemGroup>
@@ -173,6 +175,9 @@
     <BundleResource Include="Resources\translate.png" />
     <BundleResource Include="Resources\spellcheck.png" />
     <BundleResource Include="Resources\rating.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\microphone_on.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
