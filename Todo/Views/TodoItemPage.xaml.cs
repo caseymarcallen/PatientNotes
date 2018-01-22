@@ -19,18 +19,27 @@ namespace Todo
 		{
 			get { return (TodoItem)GetValue(TodoItemProperty); }
 			set { SetValue(TodoItemProperty, value); }
-		}
+	    }
 
-		public static readonly BindableProperty IsProcessingProperty =
-			BindableProperty.Create("IsProcessing", typeof(bool), typeof(TodoItemPage), false);
+	    public static readonly BindableProperty IsProcessingProperty =
+	        BindableProperty.Create("IsProcessing", typeof(bool), typeof(TodoItemPage), false);
 
-		public bool IsProcessing
-		{
-			get { return (bool)GetValue(IsProcessingProperty); }
-			set { SetValue(IsProcessingProperty, value); }
-		}
+	    public bool IsProcessing
+	    {
+	        get { return (bool)GetValue(IsProcessingProperty); }
+	        set { SetValue(IsProcessingProperty, value); }
+	    }
 
-		public TodoItemPage()
+	    public static readonly BindableProperty StatusProperty =
+	        BindableProperty.Create("Status", typeof(string), typeof(TodoItemPage), "");
+
+	    public string Status
+	    {
+	        get { return (string)GetValue(StatusProperty); }
+	        set { SetValue(StatusProperty, value); }
+	    }
+
+        public TodoItemPage()
 		{
 			InitializeComponent();
 
@@ -47,8 +56,8 @@ namespace Todo
 				if (!isRecording)
 				{
 					audioRecordingService.StartRecording();
-
-					((Button)sender).Image = "recording.png";
+				    Status = "Listening...";
+					((Button)sender).Image = "microphone_on.png";
 					IsProcessing = true;
 				}
 				else
@@ -59,6 +68,7 @@ namespace Todo
 				isRecording = !isRecording;
 				if (!isRecording)
 				{
+				    Status = "Converting to text...";
 					var speechResult = await bingSpeechService.RecognizeSpeechAsync(Constants.AudioFilename);
 					Debug.WriteLine("Name: " + speechResult.Name);
 					Debug.WriteLine("Confidence: " + speechResult.Confidence);
@@ -78,7 +88,8 @@ namespace Todo
 			{
 				if (!isRecording)
 				{
-					((Button)sender).Image = "record.png";
+				    Status = "";
+					((Button)sender).Image = "microphone_off.png";
 					IsProcessing = false;
 				}
 			}
