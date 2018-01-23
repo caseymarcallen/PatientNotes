@@ -1,6 +1,6 @@
 ﻿using UIKit;
 
-namespace Todo.iOS
+namespace PatientNotes.iOS
 {
 	public class Application
 	{

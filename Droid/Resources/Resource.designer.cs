@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("Todo.Droid.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("PatientNotes.Droid.Resource", IsApplication=true)]
 
-namespace Todo.Droid
+namespace PatientNotes.Droid
 {
 	
 	
@@ -26,9 +26,9 @@ namespace Todo.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::PCLStorage.Resource.String.ApplicationName = global::Todo.Droid.Resource.String.ApplicationName;
-			global::PCLStorage.Resource.String.Hello = global::Todo.Droid.Resource.String.Hello;
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::Todo.Droid.Resource.Attribute.actionBarSize;
+			global::PCLStorage.Resource.String.ApplicationName = global::PatientNotes.Droid.Resource.String.ApplicationName;
+			global::PCLStorage.Resource.String.Hello = global::PatientNotes.Droid.Resource.String.Hello;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::PatientNotes.Droid.Resource.Attribute.actionBarSize;
 		}
 		
 		public partial class Animation

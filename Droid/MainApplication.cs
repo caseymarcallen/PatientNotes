@@ -4,7 +4,7 @@ using Android.OS;
 using Android.Runtime;
 using Plugin.CurrentActivity;
 
-namespace Todo.Droid
+namespace PatientNotes.Droid
 {
 	//You can specify additional application information in this attribute
 	[Application]

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
 using Xamarin.Forms;
-using Todo.iOS;
+using PatientNotes.iOS;
 
 [assembly: Dependency(typeof(FileHelper))]
-namespace Todo.iOS
+namespace PatientNotes.iOS
 {
 	public class FileHelper : IFileHelper
 	{

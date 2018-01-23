@@ -2,10 +2,10 @@
 using AVFoundation;
 using Foundation;
 using Xamarin.Forms;
-using Todo.iOS;
+using PatientNotes.iOS;
 
 [assembly: Dependency(typeof(AudioRecorderService))]
-namespace Todo.iOS
+namespace PatientNotes.iOS
 {
 	public class AudioRecorderService : IAudioRecorderService
 	{
@@ -50,7 +50,7 @@ namespace Todo.iOS
 			}
 
 			var localStorage = PCLStorage.FileSystem.Current.LocalStorage.Path;
-			string audioFilePath = localStorage + "/Todo.wav";
+			string audioFilePath = localStorage + "/PatientNotes.wav";
 			Console.WriteLine("Audio file path: " + audioFilePath);
 
 			url = NSUrl.FromFilename(audioFilePath);

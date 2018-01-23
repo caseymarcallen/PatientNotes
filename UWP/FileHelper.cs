@@ -1,16 +1,16 @@
 ﻿using System.IO;
-using Todo.UWP;
+using PatientNotes.UWP;
 using Windows.Storage;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(FileHelper))]
-namespace Todo.UWP
+namespace PatientNotes.UWP
 {
-    public class FileHelper : IFileHelper
+  public class FileHelper : IFileHelper
+  {
+    public string GetLocalFilePath(string filename)
     {
-        public string GetLocalFilePath(string filename)
-        {
-            return Path.Combine(ApplicationData.Current.LocalFolder.Path, filename);
-        }
+      return Path.Combine(ApplicationData.Current.LocalFolder.Path, filename);
     }
+  }
 }

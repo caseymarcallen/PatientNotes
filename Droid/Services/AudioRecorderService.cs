@@ -7,10 +7,10 @@ using Android.Content;
 using Android.Media;
 using Java.IO;
 using Xamarin.Forms;
-using Todo.Droid;
+using PatientNotes.Droid;
 
 [assembly: Dependency(typeof(AudioRecorderService))]
-namespace Todo.Droid
+namespace PatientNotes.Droid
 {
 	public class AudioRecorderService : IAudioRecorderService
 	{
@@ -198,7 +198,7 @@ namespace Todo.Droid
 		string GetFilename()
 		{
 			var path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-			return Path.Combine(path, "Todo.wav");
+			return Path.Combine(path, "PatientNotes.wav");
 		}
 
 		void DeleteTempFile()
