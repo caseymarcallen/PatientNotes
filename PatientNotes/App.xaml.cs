@@ -23,7 +23,7 @@ namespace PatientNotes
 		public App()
 		{
 			InitializeComponent();
-			MainPage = new NavigationPage(new PatientNotesListPage());
+			MainPage = new NavigationPage(new PatientNotesListPage()) { BarBackgroundColor = Color.FromHex("#F35220")};
 		}
 
 		protected override void OnStart()
