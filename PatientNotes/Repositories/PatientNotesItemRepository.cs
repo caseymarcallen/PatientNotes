@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using SQLite;
 
@@ -12,19 +13,30 @@ namespace PatientNotes
 		{
 			connection = new SQLiteAsyncConnection(dbPath);
 			connection.CreateTableAsync<PatientNotesItem>().Wait();
-		}
+	    }
 
-		public Task<List<PatientNotesItem>> GetAllItemsAsync()
-		{
-			return connection.Table<PatientNotesItem>().ToListAsync();
-		}
+	    public Task<List<PatientNotesItem>> GetAllItemsAsync()
+	    {
+	        return connection.Table<PatientNotesItem>().ToListAsync();
+	    }
 
-		public Task<PatientNotesItem> GetItemAsync(int id)
-		{
-			return connection.Table<PatientNotesItem>().Where(i => i.ID == id).FirstOrDefaultAsync();
-		}
+	    public async Task<List<string>> GetAllPatientsAsync()
+	    {
+	        var items = await connection.Table<PatientNotesItem>().ToListAsync();
+	        return items.GroupBy(item => item.Patient).Select(item => item.Key).ToList();
+	    }
 
-		public Task<int> SaveItemAsync(PatientNotesItem item)
+	    public Task<PatientNotesItem> GetItemAsync(int id)
+	    {
+	        return connection.Table<PatientNotesItem>().Where(i => i.ID == id).FirstOrDefaultAsync();
+	    }
+
+	    public Task<List<PatientNotesItem>> GetAllPatientItemsAsync(string patient)
+	    {
+	        return connection.Table<PatientNotesItem>().Where(i => i.Patient == patient).ToListAsync();
+	    }
+
+        public Task<int> SaveItemAsync(PatientNotesItem item)
 		{
 			if (item.ID != 0)
 			{

@@ -9,5 +9,10 @@ namespace PatientNotes
 		Task<PatientNotesItem> GetItemAsync(int id);
 		Task<int> SaveItemAsync(PatientNotesItem item);
 		Task<int> DeleteItemAsync(PatientNotesItem item);
+
+
+	    Task<List<string>> GetAllPatientsAsync();
+	    Task<List<PatientNotesItem>> GetAllPatientItemsAsync(string patient);
+
 	}
 }

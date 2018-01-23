@@ -3,6 +3,7 @@ using Android.Content.PM;
 using Android.OS;
 using Plugin.Permissions;
 using Plugin.Media;
+using ZXing.Net.Mobile.Android;
 
 namespace PatientNotes.Droid
 {
@@ -24,6 +25,8 @@ namespace PatientNotes.Droid
 		public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Android.Content.PM.Permission[] grantResults)
 		{
 			PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-		}
-	}
+            PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        }
+    }
 }

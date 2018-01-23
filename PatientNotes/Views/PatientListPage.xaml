@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="PatientNotes.PatientNotesListPage" Title="{Binding Source={x:Reference page}, Path=Patient}">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="PatientNotes.PatientListPage" Title="Patient Notes">
 	<ContentPage.ToolbarItems>
         <ToolbarItem Icon="plus.png" Clicked="OnItemAdded" />
     </ContentPage.ToolbarItems>
@@ -10,9 +10,7 @@
 		<ListView.ItemTemplate>
 		    <DataTemplate>
 		        <ViewCell>
-		            <StackLayout Margin="20,0,0,0" Orientation="Vertical">
-		                <Label Text="{Binding Name}" VerticalTextAlignment="Center" FontSize="10" HorizontalOptions="StartAndExpand" />
-		            </StackLayout>
+		            <Label Text="{Binding}"  Margin="20,0,0,0" VerticalTextAlignment="Center" FontAttributes="Bold" />
 		        </ViewCell>
 		    </DataTemplate>
             </ListView.ItemTemplate>
