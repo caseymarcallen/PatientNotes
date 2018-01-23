@@ -182,7 +182,7 @@
     <BundleResource Include="Resources\microphone_on.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\site-logo.png" />
+    <BundleResource Include="Resources\siteLogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

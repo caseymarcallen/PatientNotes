@@ -4,7 +4,7 @@
 	{
 		public static readonly string AuthenticationTokenEndpoint = "https://api.cognitive.microsoft.com/sts/v1.0";
 
-        public static readonly string BingSpeechApiKey = "<INSERT_API_KEY_HERE>";
+        public static readonly string BingSpeechApiKey = "2a817098e98146bfa51036774ad9232d";
 		public static readonly string SpeechRecognitionEndpoint = "https://speech.platform.bing.com/recognize";
 		public static readonly string AudioContentType = @"audio/wav; codec=""audio/pcm""; samplerate=16000";
 
