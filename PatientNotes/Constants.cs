@@ -16,6 +16,6 @@
 
 		public static readonly string EmotionApiKey = "<INSERT_API_KEY_HERE>";
 
-		public static readonly string AudioFilename = "PatientNote.wav";
+		public static readonly string AudioFilename = "PatientNotes.wav";
 	}
 }
