@@ -3,6 +3,9 @@
 	<ContentPage.ToolbarItems>
         <ToolbarItem Icon="plus.png" Clicked="OnItemAdded" />
     </ContentPage.ToolbarItems>
+    <StackLayout>
+    <Image Source="siteLogo.png" Margin="30" HeightRequest="100"></Image>
+    <Label Text="Previous Notes:"></Label>
 	<ListView x:Name="listView" Margin="20" ItemSelected="OnItemSelected">
 		<ListView.ItemTemplate>
 			<DataTemplate>
@@ -14,5 +17,6 @@
 				</ViewCell>
 			</DataTemplate>
 		</ListView.ItemTemplate>
-	</ListView>
+        </ListView>
+    </StackLayout>
 </ContentPage>
