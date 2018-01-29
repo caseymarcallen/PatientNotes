@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="PatientNotes.PatientNotesListPage" Title="{Binding Source={x:Reference page}, Path=Patient}">
-	<ContentPage.ToolbarItems>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PatientNotes.PatientNotesListPage" Title="Doc Notes">
+    <ContentPage.ToolbarItems>
         <ToolbarItem Icon="plus.png" Clicked="OnItemAdded" />
     </ContentPage.ToolbarItems>
-    <StackLayout>
-    <Image Source="siteLogo.png" Margin="30" HeightRequest="100"></Image>
-    <Label Text="Previous Notes:"></Label>
-	<ListView x:Name="listView" Margin="20" ItemSelected="OnItemSelected">
-		<ListView.ItemTemplate>
-		    <DataTemplate>
-		        <ViewCell>
-		            <StackLayout Margin="20,0,0,0" Orientation="Vertical">
-		                <Label Text="{Binding Name}" VerticalTextAlignment="Center" FontSize="10" HorizontalOptions="StartAndExpand" />
-		            </StackLayout>
-		        </ViewCell>
-		    </DataTemplate>
+    <StackLayout Margin="5">
+        <Label Text="Previous Notes:" Margin="0,0,0,20" />
+        <ListView x:Name="listView" ItemSelected="OnItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label Text="{Binding Name}" VerticalTextAlignment="Center" FontSize="10"
+                               HorizontalOptions="StartAndExpand" />
+                    </ViewCell>
+                </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
     </StackLayout>

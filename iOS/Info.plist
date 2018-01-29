@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>Patient Notes</string>
+	<string>Doc Notes</string>
 	<key>CFBundleIdentifier</key>
 	<string>net.readify.patientnotes</string>
 	<key>CFBundleShortVersionString</key>

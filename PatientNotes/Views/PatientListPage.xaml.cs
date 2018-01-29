@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration;
 using ZXing.Net.Mobile.Forms;
@@ -15,7 +16,12 @@ namespace PatientNotes
 		protected override async void OnAppearing()
 		{
 			base.OnAppearing();
-			listView.ItemsSource = await App.PatientNotesManager.GetAllPatientsAsync();
+            var patients = await App.PatientNotesManager.GetAllPatientsAsync();
+		    patients = patients.Select(p => string.IsNullOrEmpty(p) ? "Unknown" : p).ToList();
+
+		    listView.ItemsSource = patients;
+            
+		    listView.SelectedItem = null;
 		}
 
 		async void OnItemAdded(object sender, EventArgs e)
@@ -49,12 +55,22 @@ namespace PatientNotes
             
 		}
 
-		async void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
-		{
-			await Navigation.PushAsync(new PatientNotesListPage
-			{
-				Patient = e.SelectedItem?.ToString()
-			});
-		}
+	    async void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+	    {
+	        var patientName = e.SelectedItem?.ToString();
+
+	        if (patientName != null)
+	        {
+	            if (patientName == "Unknown")
+	            {
+	                patientName = null;
+	            }
+
+	            await Navigation.PushAsync(new PatientNotesListPage
+	            {
+	                Patient = patientName
+	            });
+	        }
+	    }
 	}
 }
